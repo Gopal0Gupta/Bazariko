@@ -11,6 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHost
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.gopal.bazariko.ui.screens.Login
+import com.gopal.bazariko.ui.screens.SplashScreen
+import com.gopal.bazariko.ui.screens.onBoardingScreens.OnBoardingScreen
 import com.gopal.bazariko.ui.theme.BazarikoTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,8 +27,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BazarikoTheme {
-
+                val navController = rememberNavController()
+                BazarikoNavHost(navController)
             }
+        }
+    }
+}
+
+@Composable
+fun BazarikoNavHost(navController: NavHostController) {
+    NavHost(navController = navController, startDestination = "splash") {
+        composable("splash") {
+            SplashScreen(navController = navController)
+        }
+        composable("onBoard") {
+            OnBoardingScreen(navController = navController)
+        }
+        composable("login") {
+            Login()
         }
     }
 }
