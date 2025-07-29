@@ -44,7 +44,10 @@ fun BazarikoNavHost(navController: NavHostController) {
             OnBoardingScreen(navController = navController)
         }
         composable("login") {
-            Login()
+            Login(navController = navController)
+        }
+        composable("signup") {
+            Signup(navController = navController)
         }
     }
 }
