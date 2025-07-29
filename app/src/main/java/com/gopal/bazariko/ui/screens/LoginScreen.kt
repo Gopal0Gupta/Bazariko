@@ -170,9 +170,12 @@ fun Login(navController: NavController) {
                     modifier = Modifier
                         .size(50.dp)
                         .background(
-                            Color(0xFFEE997D),
+                            Color(0xEBFFD6CA),
                             shape = CircleShape
-                        ),
+                        )
+                        .clickable {
+
+                        },
                     contentAlignment = Alignment.Center
                 ) {
                     Image(
@@ -184,7 +187,7 @@ fun Login(navController: NavController) {
                     modifier = Modifier
                         .size(50.dp)
                         .background(
-                            Color(0xFFEE997D),
+                            Color(0xEBFFD6CA),
                             shape = CircleShape
                         )
                         .clickable {
@@ -201,7 +204,7 @@ fun Login(navController: NavController) {
                     modifier = Modifier
                         .size(50.dp)
                         .background(
-                            Color(0xFFEE997D),
+                            Color(0xEBFFD6CA),
                             shape = CircleShape
                         )
                         .clickable {

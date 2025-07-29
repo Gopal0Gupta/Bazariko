@@ -39,7 +39,7 @@ fun CustomTextField(
             onChanged(newText)
         },
         placeholder = {
-            Text(text = placeholder)
+            Text(text = placeholder, color = Color.Gray)
         },
         label = { Text(text = label) },
         shape = RoundedCornerShape(1.dp),
@@ -55,7 +55,7 @@ fun CustomTextField(
             cursorColor = Color(0xFFEE5A2D),
             focusedBorderColor = Color(0xFFEE5A2D),
             focusedLabelColor = Color(0xFFEE5A2D),
-            focusedTextColor = Color.Gray
+            focusedTextColor = Color.DarkGray
         ),
         visualTransformation = visualTransformation,
         keyboardOptions = KeyboardOptions.Default.copy(keyboardType = keyboardType),

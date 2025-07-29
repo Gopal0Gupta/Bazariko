@@ -4,21 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.gopal.bazariko.ui.screens.Login
+import com.gopal.bazariko.ui.screens.Signup
 import com.gopal.bazariko.ui.screens.SplashScreen
+import com.gopal.bazariko.ui.screens.forgot
+import com.gopal.bazariko.ui.screens.home
 import com.gopal.bazariko.ui.screens.onBoardingScreens.OnBoardingScreen
+import com.gopal.bazariko.ui.screens.otp
 import com.gopal.bazariko.ui.theme.BazarikoTheme
 
 class MainActivity : ComponentActivity() {
@@ -48,6 +45,15 @@ fun BazarikoNavHost(navController: NavHostController) {
         }
         composable("signup") {
             Signup(navController = navController)
+        }
+        composable("otp") {
+            otp(navController = navController)
+        }
+        composable("forgot") {
+            forgot(navController = navController)
+        }
+        composable("home") {
+            home(navController = navController)
         }
     }
 }

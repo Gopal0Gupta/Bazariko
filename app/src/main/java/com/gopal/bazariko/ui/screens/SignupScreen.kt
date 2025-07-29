@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -31,7 +32,7 @@ import com.gopal.bazariko.ui.components.ErrorSuggestion
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun SignUpScreen(navController: NavController) {
+fun Signup(navController: NavController) {
     var email by remember { mutableStateOf(TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue("")) }
     var confirmPass by remember { mutableStateOf(TextFieldValue("")) }
@@ -82,7 +83,7 @@ fun SignUpScreen(navController: NavController) {
                     Box(modifier = Modifier.weight(1.0f)) {
                         Text(
                             text = "Sign Up",
-                            color = MaterialTheme.colors.TextColor,
+                            color = Color.Gray,
                             fontSize = 18.sp
                         )
                     }
@@ -93,7 +94,7 @@ fun SignUpScreen(navController: NavController) {
                 Text(text = "Register Account", fontSize = 26.sp, fontWeight = FontWeight.Bold)
                 Text(
                     text = "Complete your details or continue\nwith social media.",
-                    color = MaterialTheme.colors.TextColor,
+                    color = Color.Gray,
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(50.dp))
@@ -178,9 +179,12 @@ fun SignUpScreen(navController: NavController) {
                             modifier = Modifier
                                 .size(50.dp)
                                 .background(
-                                    MaterialTheme.colors.PrimaryLightColor,
+                                    Color(0xEBFFD6CA),
                                     shape = CircleShape
-                                ),
+                                )
+                                .clickable {
+
+                                },
                             contentAlignment = Alignment.Center
                         ) {
                             Image(
@@ -192,7 +196,7 @@ fun SignUpScreen(navController: NavController) {
                             modifier = Modifier
                                 .size(50.dp)
                                 .background(
-                                    MaterialTheme.colors.PrimaryLightColor,
+                                    Color(0xEBFFD6CA),
                                     shape = CircleShape
                                 )
                                 .clickable {
@@ -201,7 +205,7 @@ fun SignUpScreen(navController: NavController) {
                             contentAlignment = Alignment.Center,
                         ) {
                             Image(
-                                painter = painterResource(id = R.drawable.twitter),
+                                painter = painterResource(id = R.drawable.x),
                                 contentDescription = "Twitter Login Icon"
                             )
                         }
@@ -209,7 +213,7 @@ fun SignUpScreen(navController: NavController) {
                             modifier = Modifier
                                 .size(50.dp)
                                 .background(
-                                    MaterialTheme.colors.PrimaryLightColor,
+                                    Color(0xEBFFD6CA),
                                     shape = CircleShape
                                 )
                                 .clickable {
@@ -236,17 +240,18 @@ fun SignUpScreen(navController: NavController) {
                     ) {
                         Text(
                             text = "By continuing you confirm that you agree",
-                            color = MaterialTheme.colors.TextColor
+                            color = Color.Gray
                         )
                         Row()
                         {
                             Text(
                                 text = "with our ",
-                                color = MaterialTheme.colors.TextColor,
+                                color = Color.Gray
+                                ,
                             )
                             Text(
                                 text = "Terms & Condition",
-                                color = MaterialTheme.colors.PrimaryColor,
+                                color = Color(0xFFEE5A2D),
                                 modifier = Modifier.clickable {
 
                                 })
@@ -279,7 +284,7 @@ fun SignUpScreen(navController: NavController) {
                     Box(modifier = Modifier.weight(1.0f)) {
                         Text(
                             text = "Sign Up",
-                            color = MaterialTheme.colors.TextColor,
+                            color = Color.Gray,
                             fontSize = 18.sp
                         )
                     }
@@ -290,7 +295,7 @@ fun SignUpScreen(navController: NavController) {
                 Text(text = "Complete Profile", fontSize = 26.sp, fontWeight = FontWeight.Bold)
                 Text(
                     text = "Complete your details or continue\nwith social media.",
-                    color = MaterialTheme.colors.TextColor,
+                    color = Color.Gray,
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(50.dp))
@@ -334,7 +339,7 @@ fun SignUpScreen(navController: NavController) {
 
                 Spacer(modifier = Modifier.height(20.dp))
                 CustomTextField(
-                    placeholder = "example: Dhaka, Bangladesh",
+                    placeholder = "example: Bhilai, Chhattisgarh",
                     trailingIcon = R.drawable.location_point,
                     label = "Address",
                     keyboardType = KeyboardType.Password,
@@ -365,7 +370,7 @@ fun SignUpScreen(navController: NavController) {
                     addressErrorState.value = !isAddressValid
                     phoneNumberErrorState.value = !isPhoneValid
                     if (!isFNameValid && !isLNameValid && !isAddressValid && !isPhoneValid) {
-                        navController.navigate(AuthScreen.OTPScreen.route)
+                        navController.navigate("otp")
                     }
                 }
             }
@@ -387,17 +392,17 @@ fun SignUpScreen(navController: NavController) {
                 ) {
                     Text(
                         text = "By continuing you confirm that you agree",
-                        color = MaterialTheme.colors.TextColor
+                        color = Color.Gray
                     )
                     Row()
                     {
                         Text(
                             text = "with our ",
-                            color = MaterialTheme.colors.TextColor,
+                            color = Color.Gray,
                         )
                         Text(
                             text = "Terms & Condition",
-                            color = MaterialTheme.colors.PrimaryColor,
+                            color = Color(0xFFEE5A2D),
                             modifier = Modifier.clickable {
 
                             })
