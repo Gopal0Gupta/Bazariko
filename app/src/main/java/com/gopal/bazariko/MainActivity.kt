@@ -17,6 +17,7 @@ import com.gopal.bazariko.ui.screens.home
 import com.gopal.bazariko.ui.screens.onBoardingScreens.OnBoardingScreen
 import com.gopal.bazariko.ui.screens.otp
 import com.gopal.bazariko.ui.theme.BazarikoTheme
+import com.gopal.bazariko.viewmodel.AuthViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BazarikoNavHost(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "splash") {
+        val authViewModel = AuthViewModel()
         composable("splash") {
             SplashScreen(navController = navController)
         }
@@ -41,7 +43,7 @@ fun BazarikoNavHost(navController: NavHostController) {
             OnBoardingScreen(navController = navController)
         }
         composable("login") {
-            Login(navController = navController)
+            Login(navController = navController, authViewModel = authViewModel)
         }
         composable("signup") {
             Signup(navController = navController)

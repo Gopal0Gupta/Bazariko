@@ -31,11 +31,11 @@ import com.gopal.bazariko.ui.components.CustomDefaultBtn
 import com.gopal.bazariko.ui.components.CustomTextField
 import com.gopal.bazariko.ui.components.DefaultBackArrow
 import com.gopal.bazariko.ui.components.ErrorSuggestion
-
+import com.gopal.bazariko.viewmodel.AuthViewModel
 
 
 @Composable
-fun Login(navController: NavController) {
+fun Login(navController: NavController,authViewModel: AuthViewModel) {
     var email by remember { mutableStateOf(TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue("")) }
     var checkBox by remember {
@@ -146,6 +146,7 @@ fun Login(navController: NavController) {
             emailErrorState.value = !isEmailValid
             passwordErrorState.value = !isPassValid
             if (isEmailValid && isPassValid) {
+
                 navController.navigate("home"){
                     popUpTo("login") {
                         inclusive = true

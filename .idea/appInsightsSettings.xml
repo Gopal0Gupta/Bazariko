@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.gopal.bazariko" />
+                  <option name="mobileSdkAppId" value="1:1001583987240:android:a35b70bda42b9dc272c31d" />
+                  <option name="projectId" value="bazariko" />
+                  <option name="projectNumber" value="1001583987240" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
